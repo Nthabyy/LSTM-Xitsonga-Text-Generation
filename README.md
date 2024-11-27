@@ -10,7 +10,7 @@ In this project, we aim to develop a **text generation model** for the **Xitsong
 
 ### 1. **Data Collection**
 
-The first step is to collect the text data. The corpus for training is scraped from the **Sadiler website**, which provides a variety of Xitsonga textual content. The data collection process involves extracting text from the website and preparing it for further processing.
+The first step is to collect the text data. The corpus for training was collected from Sadiler website, which provides a variety of Xitsonga textual content. The data collection process involves extracting text from the government websites.
 
 ### 2. **Data Cleaning**
 
@@ -37,11 +37,10 @@ Data preprocessing involves preparing the raw text for the model by converting i
 - **Sequence Creation**: Sequences of tokens are created to represent context for the model. A sliding window approach is used to create these sequences.
 - **Padding**: Sequences are padded to ensure they all have the same length. Padding ensures that shorter sequences are extended with zeros to maintain uniformity.
 
-These preprocessing steps are essential for transforming the raw text into a structured format that the model can process.
 
 ### 5. **Model Building**
 
-The core of the project is building an LSTM-based text generation model. The architecture of the model includes the following components:
+The architecture of the model includes the following components:
 - **Embedding Layer**: The input sequences are transformed into dense vectors in an embedding space.
 - **LSTM Layer**: The LSTM layer learns the temporal dependencies in the text.
 - **Dropout Layers**: Dropout is used to regularize the model and prevent overfitting.
@@ -52,23 +51,28 @@ The model is built using **Keras** with **TensorFlow** as the backend. The LSTM 
 ### 6. **Model Training**
 
 The model is trained using the preprocessed data. During training, the model learns to predict the next word in the sequence based on the context provided by previous words. The following steps are involved in training:
-- **Split the Data**: The dataset is split into training, validation, and test sets in an 80-10-10 ratio.
-- **Compile the Model**: The model is compiled with an appropriate optimizer (e.g., Adam) and a loss function (e.g., categorical crossentropy).
+- **Split the Data**: The dataset is split into training, validation, and test sets in an 80-10-10%.
+- **Compile the Model**: The model is compiled with an appropriate optimizer (Adam) and a loss function (categorical crossentropy).
 - **Train the Model**: The model is trained on the training data, and its performance is evaluated on the validation set.
 
 ### 7. **Text Generation**
 
 After the model is trained, it can be used for generating text. The text generation process involves:
-- **Temperature-Controlled Sampling**: Temperature is used to control the randomness of predictions. A higher temperature generates more diverse text, while a lower temperature results in more predictable output.
+- **Temperature-Controlled Sampling**: Temperature was used to control the randomness of predictions. A higher temperature generates more diverse text, while a lower temperature results in more predictable output.
 - **Seed Text**: A seed text is provided to start the generation process. The model generates the next word based on the seed and continues generating words iteratively to form a sentence or paragraph.
 
-The generated text is evaluated for coherence and relevance, and adjustments are made to the model and generation process to improve the quality.
+### Example:
 
+- **Seed Text**: "Ndzi vona swifaniso swa rixaka ra mina, leswi nga kumekaka emahlweni ka malembe."
+
+Based on this seed, the model will start by predicting the next word and continue iteratively. The generated text might look like this:
+
+- **Generated Text**: "Ndzi vona swifaniso swa rixaka ra mina, leswi nga kumekaka emahlweni ka malembe. Hikwalaho ka leswi, vanhu va ri karhi va hlangana tanihi swakudya leswi tsakisaka."
+- 
 ### 8. **Model Evaluation**
 
 Model evaluation is performed to assess how well the model generates text. The evaluation process includes:
 - **Loss and Perplexity**: Loss measures how well the model is fitting the data, while perplexity gives an indication of how well the model predicts the next word.
-- **Coherence**: The generated text is evaluated for coherence and grammatical correctness.
 
 ---
 
@@ -84,7 +88,6 @@ In this project, we developed a text generation model for the **Xitsonga** langu
 - **Matplotlib**: For visualizing the dataset and the results.
 - **NumPy**: For numerical operations.
 - **Pandas**: For data manipulation and handling.
-- **BeautifulSoup**: For web scraping the Xitsonga text from the Sadiler website.
 - **Seaborn/Plotly**: For advanced visualizations during EDA.
 
 ---

@@ -34,7 +34,7 @@ EDA provides insights into the text and assists in preparing the data for tokeni
 
 Data preprocessing involves preparing the raw text for the model by converting it into a format suitable for LSTM-based training. The key steps in preprocessing are:
 - **Tokenization**: The text is split into tokens (words), and each word is mapped to a unique integer using a tokenizer.
-- **Sequence Creation**: Sequences of tokens are created to represent context for the model. A sliding window approach is used to create these sequences.
+- **Sequence Creation**: Sequences of tokens are created to represent context for the model. 
 - **Padding**: Sequences are padded to ensure they all have the same length. Padding ensures that shorter sequences are extended with zeros to maintain uniformity.
 
 
